@@ -14,6 +14,11 @@ function index(req, res) {
   })
 }
 
+function create(req, res) {
+  console.log("load issue")
+}
+
 export {
-  index
+  index,
+  create
 }

@@ -3,6 +3,20 @@
 
 <section>
   <h1>Issues</h1>
+  <% if (user) { %>
+    <h2>Add an issue</h2>
+    <form action="/issues" method="POST">
+      <label>
+        Title: 
+        <input type="text" name="title" autocomplete="off">
+      </label>
+      <label>
+        In Print?
+        <input type="checkbox" name="stillInPrint">
+      </label>
+      <button type="submit">Add Comic</button>
+    </form>
+  <% } %>
   <h2>All Issues Collected</h2>
 	<ul>
   <% issues.forEach(issue => { %>
