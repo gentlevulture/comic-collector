@@ -1,0 +1,14 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Issues</h1>
+  <h2>All Issues Collected</h2>
+	<ul>
+  <% issues.forEach(issue => { %>
+    <li>Issue <%= issue.name %> is <%= issue.stillInPrint ? 'still in print' : 'not currently in print' %></li>
+  <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
