@@ -20,7 +20,9 @@
   <h2>All Issues Collected</h2>
 	<ul>
   <% issues.forEach(issue => { %>
-    <li><%= issue.title %> is <%= issue.stillInPrint ? 'still in print' : 'not currently in print' %></li>
+    <li>
+      <a href="/issues/<%= issue._id %>"><%= issue.title %></a> is <%= issue.stillInPrint ? 'still in print' : 'not currently in print' %>
+    </li>
   <% }) %>
   </ul>
 </section>

@@ -1,0 +1,10 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+	<p>From the collection of <%= issue.collector.name %>...</p>
+  <h1><%= issue.title %></h1>
+  <h2>This comic is <%= issue.stillInPrint ? 'still printing' : 'no longer in print' %></h2>
+</section>
+
+<%- include('../partials/footer') %>

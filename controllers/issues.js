@@ -27,7 +27,23 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Issue.findById(req.params.id)
+  .populate("collector")
+  .then(issue => {
+    res.render('issues/show', {
+      issue,
+      title: "show single issue"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/issues')
+  })
+}
+
 export {
   index,
-  create
+  create, 
+  show,
 }
