@@ -15,7 +15,16 @@ function index(req, res) {
 }
 
 function create(req, res) {
-  console.log("load issue")
+  req.body.collector = req.user.profile._id
+	req.body.stillInPrint = !!req.body.stillInPrint
+  Issue.create(req.body)
+  .then(issue => {
+    res.redirect('/issues')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/issues')
+  })
 }
 
 export {
