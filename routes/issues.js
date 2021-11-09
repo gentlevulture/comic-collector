@@ -22,6 +22,9 @@ router.patch('/:id/flip-print', isLoggedIn, issuesCtrl.flipPrint)
 // localhost:3000/issues/:id - PUT
 router.put('/:id', isLoggedIn, issuesCtrl.update)
 
+// localhost:3000/issues/:id - DELETE
+router.delete('/:id', isLoggedIn, issuesCtrl.delete)
+
 export {
   router
 }

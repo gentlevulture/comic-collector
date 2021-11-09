@@ -90,11 +90,30 @@ function update(req, res) {
   })
 }
 
+function deleteIssue(req, res) {
+  Issue.findById(req.params.id)
+  .then(issue => {
+    if (issue.owner.equals(req.user.profile._id)) {
+      issue.delete()
+      .then(() => {
+        res.redirect('/issues')
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }   
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/issues')
+  })
+}
+
 export {
   index,
   create, 
   show,
   flipPrint, 
   edit,
-  update
+  update,
+  deleteIssue as delete
 }
