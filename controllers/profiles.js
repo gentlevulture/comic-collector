@@ -50,8 +50,18 @@ function createDreamIssue(req, res) {
 }
 
 function deleteDreamIssue(req, res) {
-  console.log(req.params.id)
-  console.log("delete issue")
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.dreamIssues.remove({_id: req.params.id})
+    profile.save()
+    .then(()=> {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
 }
 
 export {
