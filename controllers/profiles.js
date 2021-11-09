@@ -15,7 +15,23 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  console.log("profile:", req.params.id)
+  Profile.findById(req.params.id)
+  .then((profile) => {
+    Profile.findById(req.user.profile._id)
+    .then(self => {
+      const isSelf = self._id.equals(profile._id)
+      res.render("profiles/show", {
+        title: `${profile.name}'s profile`,
+        profile,
+        self,
+        isSelf,
+      })
+    })
+  })
+  .catch((err) => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 export {
