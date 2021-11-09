@@ -49,8 +49,14 @@ function createDreamIssue(req, res) {
   })
 }
 
+function deleteDreamIssue(req, res) {
+  console.log(req.params.id)
+  console.log("delete issue")
+}
+
 export {
   index,
   show, 
-  createDreamIssue
+  createDreamIssue,
+  deleteDreamIssue,
 }

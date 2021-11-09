@@ -13,6 +13,9 @@ router.get('/:id', isLoggedIn, profilesCtrl.show)
 // localhost:3000/profiles/:id/dreamIssues - POST (DreamIssue)
 router.post('/:id/dreamIssues', isLoggedIn, profilesCtrl.createDreamIssue)
 
+// localhost:3000/profiles/dreamIssues/:id - DELETE(DreamIssue)
+router.delete('/dreamIssues/:id', isLoggedIn, profilesCtrl.deleteDreamIssue)
+
 export {
   router
 }

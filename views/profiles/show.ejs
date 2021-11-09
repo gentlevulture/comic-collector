@@ -37,6 +37,13 @@
     <% profile.dreamIssues.forEach(dreamIssue => { %>
       <h3>
         <%= dreamIssue.title %> issue number <%= dreamIssue.issue %> was published by <%= dreamIssue.publisher %>
+        <form 
+        action="/profiles/dreamIssues/<%= dreamIssue._id %>?_method=DELETE" 
+        method="POST"
+        style="display: inline-block;"
+      >
+        <button type="submit">Give up <%= dreamIssue.title %></button>
+      </form>
       </h3>
     <% }) %>
   <% } else { %>
