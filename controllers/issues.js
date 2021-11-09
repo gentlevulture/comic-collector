@@ -93,7 +93,7 @@ function update(req, res) {
 function deleteIssue(req, res) {
   Issue.findById(req.params.id)
   .then(issue => {
-    if (issue.owner.equals(req.user.profile._id)) {
+    if (issue.collector.equals(req.user.profile._id)) {
       issue.delete()
       .then(() => {
         res.redirect('/issues')
