@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: rgb(223, 221, 113);
+  background-color: rgba(201, 198, 51, 0.466);
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;

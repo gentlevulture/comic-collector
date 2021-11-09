@@ -42,8 +42,24 @@ function show(req, res) {
   })
 }
 
+function flipPrint(req, res) {
+  Issue.findById(req.params.id)
+  .then(issue => {
+    issue.stillInPrint = !issue.stillInPrint
+    issue.save()
+    .then(()=> {
+      res.redirect(`/issues/${issue._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/issues')
+  })
+}
+
 export {
   index,
   create, 
   show,
+  flipPrint
 }

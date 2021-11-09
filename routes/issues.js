@@ -13,6 +13,8 @@ router.get('/:id', issuesCtrl.show)
 // localhost:3000/issues - POST
 router.post('/', isLoggedIn, issuesCtrl.create)
 
+// localhost:3000/issues/:id/flip-print
+router.patch('/:id/flip-print', isLoggedIn, issuesCtrl.flipPrint)
 
 
 export {
