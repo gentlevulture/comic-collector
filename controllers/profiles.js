@@ -35,9 +35,18 @@ function show(req, res) {
 }
 
 function createDreamIssue(req, res) {
-  console.log("issue dream issue")
-  console.log(req.body)
-  console.log(req.params.id)
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.dreamIssues.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
 }
 
 export {
