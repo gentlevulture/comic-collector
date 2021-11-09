@@ -12,6 +12,24 @@
     </div>
   <% } %>
   <h1><%= profile.name %>'s indy dreambox</h1>
+  <% if (isSelf)  {%> 
+    <h2>Add a Dream Issue</h2>
+    <form action="/profiles/<%= profile._id %>/dreamIssues" method="POST">
+      <label>
+        Title: 
+        <input type="text" name="title" autocomplete="off">
+      </label>
+      <label>
+        Issue: 
+        <input type="number" name="issue" autocomplete="off">
+      </label>
+      <label>
+        Publisher: 
+        <input type="text" name="publisher" autocomplete="off">
+      </label>
+      <button type="submit">Add Comic</button>
+    </form>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

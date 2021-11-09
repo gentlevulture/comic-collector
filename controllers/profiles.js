@@ -34,7 +34,14 @@ function show(req, res) {
   })
 }
 
+function createDreamIssue(req, res) {
+  console.log("issue dream issue")
+  console.log(req.body)
+  console.log(req.params.id)
+}
+
 export {
   index,
-  show
+  show, 
+  createDreamIssue
 }
