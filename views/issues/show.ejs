@@ -15,6 +15,11 @@
       </button>
     </form>
   <% } %>
+  <% if (issue.collector.equals(user?.profile._id)) { %>
+    <form action="/issues/<%= issue._id %>/edit" method="GET">
+      <button class="btn" type="submit">Edit Comic</button>
+    </form>
+  <% } %>
 </section>
 
 <%- include('../partials/footer') %>

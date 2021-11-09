@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit comic</h1>
+  <form action="/issues/<%= issue._id %>?_method=PUT" method="POST">
+    <label>
+      Title: 
+      <input 
+        type="text"
+        name="title" 
+        value="<%= issue.title %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Tasty?
+      <input 
+        type="checkbox" 
+        name="stillInPrint" 
+				<%= issue.stillInPrint ? "checked" : "" %> 
+      >
+    </label>
+    <button type="submit">Edit comic</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

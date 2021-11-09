@@ -57,9 +57,24 @@ function flipPrint(req, res) {
   })
 }
 
+function edit(req, res) {
+  Issue.findById(req.params.id)
+  .then(issue => {
+    res.render('issues/edit', {
+      issue,
+      title: "edit comic"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/issues')
+  })
+}
+
 export {
   index,
   create, 
   show,
-  flipPrint
+  flipPrint, 
+  edit
 }

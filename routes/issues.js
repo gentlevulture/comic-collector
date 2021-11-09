@@ -10,6 +10,9 @@ router.get('/', issuesCtrl.index)
 // localhost:3000/issues/:id - GET
 router.get('/:id', issuesCtrl.show)
 
+// localhost:3000/issues/:id/edit
+router.get('/:id/edit', isLoggedIn, issuesCtrl.edit)
+
 // localhost:3000/issues - POST
 router.post('/', isLoggedIn, issuesCtrl.create)
 
