@@ -71,10 +71,30 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Issue.findById(req.params.id)
+  .then(issue => {
+    if (issue.collector.equals(req.user.profile._id)) {
+      req.body.stillInPrint = !!req.body.stillInPrint
+      issue.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/issues/${issue._id}`)
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/issues`)
+  })
+}
+
 export {
   index,
   create, 
   show,
   flipPrint, 
-  edit
+  edit,
+  update
 }
