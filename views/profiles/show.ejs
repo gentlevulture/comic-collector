@@ -30,6 +30,20 @@
       <button type="submit">Add Comic</button>
     </form>
   <% } %>
+  <% if (profile.dreamIssues.length)  {%>
+    <h2>
+      <%= isSelf ? "You have" : `${profile.name} has` %> Dream Issues.
+    </h2>
+    <% profile.dreamIssues.forEach(dreamIssue => { %>
+      <h3>
+        <%= dreamIssue.title %> issue number <%= dreamIssue.issue %> was published by <%= dreamIssue.publisher %>
+      </h3>
+    <% }) %>
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any Dream Issues.
+    </h2> 
+  <% } %> 
 </main>
 
 <%- include('../partials/footer') %>
