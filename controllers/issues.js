@@ -4,7 +4,7 @@ function index(req, res) {
   Issue.find({})
   .then(issues => {
     res.render('issues/index', {
-      title: "title",
+      title: "Issues",
       issues,
     })
   })
@@ -33,7 +33,7 @@ function show(req, res) {
   .then(issue => {
     res.render('issues/show', {
       issue,
-      title: "show single issue"
+      title: "Issue"
     })
   })
   .catch(err => {
@@ -62,7 +62,7 @@ function edit(req, res) {
   .then(issue => {
     res.render('issues/edit', {
       issue,
-      title: "edit comic"
+      title: "Edit Comic"
     })
   })
   .catch(err => {

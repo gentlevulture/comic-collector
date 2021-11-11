@@ -4,14 +4,14 @@
 <section>
 	<p>From the collection of <%= issue.collector.name %></p>
   <h1><%= issue.title %></h1>
-  <h2>This comic is <%= issue.stillInPrint ? 'still printing' : 'no longer in print' %></h2>
+  <h2>This comic is <%= issue.stillInPrint ? 'currently in print' : 'no longer in print' %></h2>
   <% if (user) { %>
     <form 
       action="/issues/<%= issue._id %>/flip-print?_method=PATCH" 
       method="POST"
     >
       <button class="btn" type="submit">
-        Change issue to <%= issue.stillInPrint ? 'not puplishing' : 'publishing' %>
+        Change Comic to <%= issue.stillInPrint ? 'Not Publishing' : 'Publishing' %>
       </button>
     </form>
   <% } %>
