@@ -13,17 +13,17 @@
       action="/issues/<%= issue._id %>/flip-print?_method=PATCH" 
       method="POST"
     >
-      <button class="btn" type="submit">
+      <button class="btn btn-dark" class="btn" type="submit">
         Change Comic to <%= issue.stillInPrint ? 'Not Publishing' : 'Publishing' %>
       </button>
     </form>
   <% } %>
   <% if (issue.collector.equals(user?.profile._id)) { %>
     <form action="/issues/<%= issue._id %>/edit" method="GET">
-      <button class="btn" type="submit">Edit Comic</button>
+      <button class="btn btn-dark" class="btn" type="submit">Edit Comic</button>
     </form>
     <form action="/issues/<%= issue._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete Comic</button>
+      <button class="btn btn-dark" class="btn" type="submit">Delete Comic</button>
     </form>
   <% } %>
 </section>

@@ -37,7 +37,7 @@
         Publisher: 
         <input type="text" name="publisher" autocomplete="off">
       </label>
-      <button type="submit">Add Comic</button>
+      <button class="btn btn-dark" type="submit">Add Comic</button>
     </form>
   <% } %>
   <% if (profile.dreamIssues.length)  {%>
@@ -52,7 +52,7 @@
         method="POST"
         style="display: inline-block;"
       >
-        <button type="submit">Give up on finding <%= dreamIssue.title %></button>
+        <button class="btn btn-dark" type="submit">Give up on finding <%= dreamIssue.title %></button>
       </form>
       </h3>
     <% }) %>
