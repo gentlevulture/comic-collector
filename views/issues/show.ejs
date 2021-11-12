@@ -4,7 +4,10 @@
 <section>
 	<p>From the collection of <%= issue.collector.name %></p>
   <h1><%= issue.title %></h1>
-  <h2>This comic is <%= issue.stillInPrint ? 'currently in print' : 'no longer in print' %></h2>
+  <h2>Published by <%= issue.publisher %></h2>
+  <h3>Written by <%= issue.writer %></h3>
+  <h3>Penciled by <%= issue.penciler %> </h3>
+  <p>This comic is <%= issue.stillInPrint ? 'currently in print' : 'no longer in print' %></p>
   <% if (user) { %>
     <form 
       action="/issues/<%= issue._id %>/flip-print?_method=PATCH" 

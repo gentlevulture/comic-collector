@@ -2,22 +2,34 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Issues</h1>
+  <h1>Series</h1>
   <% if (user) { %>
-    <h2>Add an issue</h2>
+    <h2>Add a series</h2>
     <form action="/issues" method="POST">
       <label>
         Title: 
         <input type="text" name="title" autocomplete="off">
       </label>
       <label>
+        Writer: 
+        <input type="text" name="writer" autocomplete="off">
+      </label>
+      <label>
+        Penciler: 
+        <input type="text" name="penciler" autocomplete="off">
+      </label>
+      <label>
+        Publisher: 
+        <input type="text" name="publisher" autocomplete="off">
+      </label>
+      <label>
         In Print?
         <input type="checkbox" name="stillInPrint">
       </label>
-      <button type="submit">Add Comic</button>
+      <button type="submit">Add Series</button>
     </form>
   <% } %>
-  <h2>Owned Issues</h2>
+  <h2>Series Titles</h2>
 	<ul>
   <% issues.forEach(issue => { %>
     <li>

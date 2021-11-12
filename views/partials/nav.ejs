@@ -4,9 +4,9 @@
 </head>
 <body>
 <nav>
-  <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>Community Indy Longbox</a>
-  <a href="/issues">Issues</a>
-  <a href="/profiles">Profiles</a>
+  <a href="/" <%- title === 'Welcome' ? 'class="active"' : '' %>>Community Indy Longbox</a>
+  <a href="/issues">Series</a>
+  <a href="/profiles">Collectors</a>
   <% if (user) { %>
     <a href="/auth/logout">Logout</a>
   <% } else { %>

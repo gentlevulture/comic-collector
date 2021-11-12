@@ -1,1 +1,1 @@
-# COMIC COLLECTOR
+# Community Indy Longbox

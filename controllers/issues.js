@@ -4,7 +4,7 @@ function index(req, res) {
   Issue.find({})
   .then(issues => {
     res.render('issues/index', {
-      title: "Issues",
+      title: "Series",
       issues,
     })
   })
@@ -33,7 +33,7 @@ function show(req, res) {
   .then(issue => {
     res.render('issues/show', {
       issue,
-      title: "Issue"
+      title: "Series"
     })
   })
   .catch(err => {
