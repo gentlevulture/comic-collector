@@ -2,6 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <section>
   <% if (profile.avatar) { %>
     <div>
       <img 
@@ -11,7 +12,7 @@
       >
     </div>
   <% } %>
-  <h1><%= profile.name %>'s indie wishlist</h1>
+  <h1><%= profile.name %>'s Indie Wishlist</h1>
   <% if (isSelf)  {%> 
     <h2>Add an indie title to your wishlist</h2>
     <form action="/profiles/<%= profile._id %>/dreamIssues" method="POST">
@@ -24,6 +25,11 @@
         <input type="text" name="writer" autocomplete="off">
       </label>
       <label>
+      <label>
+        Penciler: 
+          <input type="text" name="penciler" autocomplete="off">
+        </label>
+        <label>
         Issue: 
         <input type="number" name="issue" autocomplete="off">
       </label>
@@ -36,17 +42,17 @@
   <% } %>
   <% if (profile.dreamIssues.length)  {%>
     <h2>
-      <%= isSelf ? "You have" : `${profile.name} has` %> Dream Issues.
+      <%= isSelf ? "You have" : `${profile.name} has` %> dream issues to add to your collection
     </h2>
     <% profile.dreamIssues.forEach(dreamIssue => { %>
       <h3>
-        <%= dreamIssue.title %> issue number <%= dreamIssue.issue %> was published by <%= dreamIssue.publisher %>
+        Written by <%= dreamIssue.writer %> and drawn by <%= dreamIssue.penciler %>, <%= dreamIssue.title %> Issue No. <%= dreamIssue.issue %> was published by <%= dreamIssue.publisher %>
         <form 
         action="/profiles/dreamIssues/<%= dreamIssue._id %>?_method=DELETE" 
         method="POST"
         style="display: inline-block;"
       >
-        <button type="submit">Give up <%= dreamIssue.title %></button>
+        <button type="submit">Give up on finding <%= dreamIssue.title %></button>
       </form>
       </h3>
     <% }) %>
@@ -55,6 +61,7 @@
       <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any comics on your wishlist
     </h2> 
   <% } %> 
+</section>
 </main>
 
 <%- include('../partials/footer') %>
