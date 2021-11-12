@@ -2,7 +2,7 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Welcome, <%= user ? user.profile.name : "indie supporter." %></h1>
+  <h1>Welcome, <%= user ? user.profile.name : "indie supporter" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
@@ -11,6 +11,13 @@
       >
     </div>
   <% } %>
+  <h3>Introducing the first iteration of a community sourced reading list for discovering indie comics</h3>
+  <h3>For those who may be unfamiliar with the struggles of Jack Kirby against the "thugs" at Marvel</h3>
+  <h3>For anyone who only recently learned of Milton Finger's contributions to DC</h3>
+  <h3>For the very reason Image itself was founded by creators working for those same two publishers</h3>
+  <h3>Creators are the reason any of these companies exist</h3>
+  <h3>Here in this virtual Community Indie Longbox, you can discover and help support indie comic publishers</h3>
+  <h3>Visit the <a href="https://www.comicshoplocator.com/">Comic Shop Locator Service</a> to find a local shop near you</h3>
 </main>
 
 <%- include('./partials/footer') %>

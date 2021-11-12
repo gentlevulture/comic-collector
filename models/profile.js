@@ -4,6 +4,8 @@ const Schema = mongoose.Schema
 
 const dreamIssueSchema = new Schema ({
   title: String,
+  writer: String,
+  penciler: String,
   issue: Number,
   publisher: String,
 }, {
