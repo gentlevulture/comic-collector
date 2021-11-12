@@ -1,7 +1,7 @@
 # **Community Indie Longbox**
  
  
- #### Inspired by the struggles of Bill Finger, Jack Kirby, and Robert Kirkman and their struggles against big publishers and their corporate overlords, this website is a user sourced, public list of  to help support smaller publishers and local artists through your local comic shop.
+ #### Inspired by the struggles of Bill Finger, Jack Kirby, and Robert Kirkman, by their struggles against big publishers and their corporate overlords. This website is a user-sourced public list of independent comics to help support smaller publishers and local artists through this online source coupled with your friendly local comic shop.
 
  Link here:
  [_Join the_ **Indie Longbox Community** _now_!](https://indy-longbox.herokuapp.com/)
@@ -30,5 +30,5 @@ Profile view with wishlist
  ## _Icebox_
 
  * Trading and Selling
- * Images sourcing for quality
+ * Images Sourcing for Quality of Comics
  * Volume and Collection Integration
